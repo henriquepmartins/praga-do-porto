@@ -6,8 +6,8 @@ export default class GameScene extends Phaser.Scene {
     this.lastShotTime = 0;
     this.shotDelay = 200;
     this.pigeonSpeed = { min: -150, max: -80 }; 
-    this.difficultyInterval = 10000; 
-    this.victoryScore = 10000; 
+    this.difficultyInterval = 1000; 
+    this.victoryScore = 1000; 
   }
 
   preload() {
