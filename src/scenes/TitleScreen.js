@@ -58,14 +58,14 @@ export default class TitleScreen extends Phaser.Scene {
   }
   
   createTitleText() {
-    this.add.text(640, 150, 'Combate aos Pombos do Porto', {
+    this.add.text(640, 150, 'Praga do Porto', {
       font: '64px Arial',
       fill: '#ffffff',
       stroke: '#000000',
       strokeThickness: 8
     }).setOrigin(0.5);
     
-    const introText = "Os pombos invadiram o porto da cidade!\nVocê está pronto para enfrentar sua raiva e\neliminar todos os pombos antes que eles escapem?";
+    const introText = "Os pombos invadiram o porto da cidade!\nVocê está pronto para enfrentar sua raiva e\neliminar todos os pombos antes que eles escapem";
     this.add.text(640, 300, introText, {
       font: '32px Arial',
       fill: '#ffffff',
@@ -74,7 +74,7 @@ export default class TitleScreen extends Phaser.Scene {
       align: 'center'
     }).setOrigin(0.5);
     
-    this.add.text(640, 400, "Objetivo: Atinja 10.000 pontos para salvar o porto!", {
+    this.add.text(640, 400, "Objetivo: Atinja 1.000 pontos para salvar o porto!", {
       font: '26px Arial',
       fill: '#00ff00',
       stroke: '#000000',
