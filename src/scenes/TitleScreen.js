@@ -74,7 +74,7 @@ export default class TitleScreen extends Phaser.Scene {
       align: 'center'
     }).setOrigin(0.5);
     
-    this.add.text(640, 400, "Objetivo: Atinja 1.000 pontos para salvar o porto!", {
+    this.add.text(640, 400, "Objetivo: Atinja 600 pontos para salvar o porto!", {
       font: '26px Arial',
       fill: '#00ff00',
       stroke: '#000000',

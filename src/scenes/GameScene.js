@@ -7,9 +7,10 @@ export default class GameScene extends Phaser.Scene {
     this.lives = 5;
     this.lastShotTime = 0;
     this.shotDelay = 200;
+    // Velocidade drasticamente aumentada
     this.pigeonSpeed = {
-      min: -50,
-      max: -30
+      min: -150,
+      max: -100
     };
     this.spawnDelay = 2000;
     this.difficultyInterval = 5000;
@@ -274,9 +275,10 @@ export default class GameScene extends Phaser.Scene {
     this.score = 0;
     this.lives = 5;
     this.lastShotTime = 0;
+    // Velocidade inicial muito aumentada
     this.pigeonSpeed = {
-      min: -50,
-      max: -30
+      min: -150,
+      max: -100
     };
     this.difficultyStage = 0;
     this.spawnEvent = null;
@@ -330,15 +332,17 @@ export default class GameScene extends Phaser.Scene {
 
     const progressFactor = this.difficultyStage / this.maxDifficultyStages;
 
-    const minSpeedStart = -50;
-    const minSpeedMax = -80;
+    // Velocidades bem mais altas para progressão de dificuldade
+    const minSpeedStart = -150;
+    const minSpeedMax = -220;
     this.pigeonSpeed.min = minSpeedStart + (minSpeedMax - minSpeedStart) * progressFactor;
 
-    const maxSpeedStart = -30;
-    const maxSpeedMax = -50;
+    const maxSpeedStart = -100;
+    const maxSpeedMax = -160;
     this.pigeonSpeed.max = maxSpeedStart + (maxSpeedMax - maxSpeedStart) * progressFactor;
 
-    const spawnDelayStart = 2000;
+    // Compensação com spawn rate mais rápido
+    const spawnDelayStart = 1800;
     const spawnDelayMin = 1000;
     const newDelay = spawnDelayStart - (spawnDelayStart - spawnDelayMin) * progressFactor;
 
@@ -405,7 +409,8 @@ export default class GameScene extends Phaser.Scene {
 
   shootNet(x, y) {
     const net = this.physics.add.image(x, y, 'rede').setDepth(5);
-    net.setVelocityY(-300);
+    // Velocidade da rede aumentada para compensar pombos mais rápidos
+    net.setVelocityY(-450);
     this.physics.add.overlap(net, this.pigeons, (netObj, pigeon) => {
       netObj.destroy();
       pigeon.destroy();
